@@ -1,12 +1,13 @@
 package nl.han.ica.breakout;
 
 import nl.han.ica.OOPDProcessingEngineHAN.Engine.GameEngine;
+import processing.core.PApplet;
 
+@SuppressWarnings("serial")
 public class BreakoutGame extends GameEngine{
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
+		PApplet.main(new String[]{"nl.han.ica.waterworld.BreakoutGame"});
 	}
 
 	@Override
