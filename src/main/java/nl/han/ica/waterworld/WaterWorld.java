@@ -103,16 +103,14 @@ public class WaterWorld extends GameEngine {
         player = new Player(this);
         addGameObject(player, 100, 100);
         Swordfish sf=new Swordfish(this,-1);
-        Swordfish sf2=new Swordfish(this,-1);
         addGameObject(sf,0,0);
-        addGameObject(sf2,200,100);
     }
 
     /**
      * Maakt de spawner voor de bellen aan
      */
     public void createBubbleSpawner() {
-        bubbleSpawner=new BubbleSpawner(this,bubblePopSound,50);
+        bubbleSpawner=new BubbleSpawner(this,bubblePopSound,30);
     }
 
     /**
