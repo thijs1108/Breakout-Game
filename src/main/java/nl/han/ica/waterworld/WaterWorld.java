@@ -104,20 +104,8 @@ public class WaterWorld extends GameEngine {
         addGameObject(player, 100, 100);
         Swordfish sf=new Swordfish(this,-1);
         Swordfish sf2=new Swordfish(this,-1);
-        Swordfish sf3=new Swordfish(this,-1);
-        Swordfish sf4=new Swordfish(this,-1);
-        Swordfish sf5=new Swordfish(this,-1);
-        Swordfish sf6=new Swordfish(this,-1);
-        Swordfish sf7=new Swordfish(this,-1);
-        Swordfish sf8=new Swordfish(this,-1);
         addGameObject(sf,0,0);
         addGameObject(sf2,200,100);
-        addGameObject(sf3,400,200);
-        addGameObject(sf4,600,300);
-        addGameObject(sf5,800,400);
-        addGameObject(sf6,1000,500);
-        addGameObject(sf7,1200,600);
-        addGameObject(sf8,1400,700);
     }
 
     /**
