@@ -14,6 +14,7 @@ public class BreakoutWorld extends GameEngine{
 	private TextObject dashboardText;
 	private int bricksPopped;
 	private Board board;
+	private Ball ball;
 
 	public static void main(String[] args) {
 		PApplet.main(new String[]{"nl.han.ica.breakout.BreakoutWorld"});
@@ -23,6 +24,7 @@ public class BreakoutWorld extends GameEngine{
 	public void setupGame() {
 		int worldWidth=1204;
         int worldHeight=903;
+        ball = new Ball(25,50);
         //createViewWithoutViewport(worldWidth, worldHeight);
 	}
 
