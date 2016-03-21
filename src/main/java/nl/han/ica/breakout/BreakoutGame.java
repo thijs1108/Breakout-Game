@@ -9,10 +9,13 @@ public class BreakoutGame extends GameEngine{
 	public static void main(String[] args) {
 		PApplet.main(new String[]{"nl.han.ica.waterworld.BreakoutGame"});
 	}
+	
+	private Ball ball;
 
 	@Override
 	public void setupGame() {
-		// TODO Auto-generated method stub
+	
+		
 		
 	}
 
