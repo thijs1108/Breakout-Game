@@ -22,6 +22,7 @@ public class Brick extends GameObject{
 	@Override
 	public void draw(PGraphics g) {
 		g.fill(0xFFFFFFFF);
+		g.stroke(2);
 		g.rect(super.getX(), super.getY(), super.getWidth(), super.getHeight());
 	}
 	public int getType(){
