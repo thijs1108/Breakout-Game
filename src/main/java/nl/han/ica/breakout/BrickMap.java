@@ -16,7 +16,7 @@ public class BrickMap{
 			bricks = new ArrayList<>();
 			for(int i=1; i<7; i++) {
 				for(int j=1; j<8; j++) {
-				bricks.add(new Brick(0, i*125+100, j*40+45, 75, 30));
+				bricks.add(new Brick(Brick.EEN, i*125+100, j*40+45, 75, 30));
 				
 				}
 			}

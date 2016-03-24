@@ -37,13 +37,27 @@ public class Ball extends GameObject implements ICollidableWithGameObjects, IKey
 			if(g instanceof Brick){
 				if(((Brick) g).getType()==Brick.EEN){
 					((Brick) g).minType();
+					System.out.println(((Brick) g).getType());
 					g.setVisible(false);
-					System.out.println("geraakt");
+					super.setDirection(calculateNewDirection(this,g));
 				}
 			}
 		}
 		
 	}
+
+	private int calculateNewDirection(Ball ball, GameObject g) {
+		if(ball.getDirection()==RECHTSBOVEN){
+			if(ball.getX()>=g.getX() && ball.getY()<=g.getY()+g.getHeight()){
+				return RECHTSONDER;
+			}
+			else{
+				return RECHTSONDER;
+			}
+		}
+		return 180;
+	}
+
 
 	@Override
 	public void draw(PGraphics g) {
