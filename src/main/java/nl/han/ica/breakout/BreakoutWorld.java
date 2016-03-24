@@ -41,7 +41,7 @@ public class BreakoutWorld extends GameEngine{
         ball = new Ball(this,0xFFFFFFFF);
         ball.setWidth(25);
         ball.setHeight(25);
-        addGameObject(ball,worldWidth/2,worldHeight/8*7-50);
+        addGameObject(ball,worldWidth/2,worldHeight/8*6-50);
         brickmap=new BrickMap(1);
         bricks=brickmap.getBricks();
         for(Brick b: bricks){

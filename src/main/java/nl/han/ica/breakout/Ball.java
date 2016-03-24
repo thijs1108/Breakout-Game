@@ -37,7 +37,6 @@ public class Ball extends GameObject implements ICollidableWithGameObjects, IKey
 			if(g instanceof Brick){
 				if(((Brick) g).getType()==Brick.EEN){
 					((Brick) g).minType();
-					System.out.println(((Brick) g).getType());
 					g.setVisible(false);
 					super.setDirection(calculateNewDirection(this,g));
 				}
@@ -47,14 +46,37 @@ public class Ball extends GameObject implements ICollidableWithGameObjects, IKey
 	}
 
 	private int calculateNewDirection(Ball ball, GameObject g) {
+		
 		if(ball.getDirection()==RECHTSBOVEN){
+			//onderkant
 			if(ball.getX()>=g.getX() && ball.getY()<=g.getY()+g.getHeight()){
 				return RECHTSONDER;
 			}
+			//linkerkant
 			else{
-				return RECHTSONDER;
+				return LINKSBOVEN;
 			}
 		}
+		
+		if(ball.getDirection()==LINKSBOVEN)
+			if(ball.getX()<=g.getX()+g.getWidth()){
+				return LINKSONDER;
+			}
+			else{
+				return RECHTSBOVEN;
+			}
+		
+		if(ball.getDirection()==RECHTSONDER)
+			if(ball.getX()<=g.getX()){
+				return LINKSONDER;
+			}
+			else{
+				return RECHTSBOVEN;
+			}
+		
+		if(ball.getDirection()==LINKSONDER)
+			if(ball.getY()+ball.getWidth()>g.getY()) return RECHTSONDER;
+			else return LINKSBOVEN;
 		return 180;
 	}
 
@@ -106,7 +128,7 @@ public class Ball extends GameObject implements ICollidableWithGameObjects, IKey
 		if(keycode==32){
 			if(!isMoving){
 				super.setDirection(RECHTSBOVEN);
-				super.setSpeed(5);
+				super.setSpeed(7);
 				isMoving = true;
 			}
 			else{
