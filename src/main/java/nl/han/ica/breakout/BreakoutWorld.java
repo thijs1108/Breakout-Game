@@ -22,10 +22,9 @@ public class BreakoutWorld extends GameEngine{
 
 	@Override
 	public void setupGame() {
-		int worldWidth=1204;
-        int worldHeight=903;
-        ball = new Ball(25,50);
-        //createViewWithoutViewport(worldWidth, worldHeight);
+		int worldWidth=1200;
+        int worldHeight=900;
+        createViewWithoutViewport(worldWidth, worldHeight);
 	}
 
 	@Override
@@ -34,12 +33,12 @@ public class BreakoutWorld extends GameEngine{
 		
 	}
 	
-	/*private void createViewWithoutViewport(int screenWidth, int screenHeight) {
+	private void createViewWithoutViewport(int screenWidth, int screenHeight) {
         View view = new View(screenWidth,screenHeight);
         view.setBackground(loadImage("src/main/java/nl/han/ica/breakout/media/background.jpg"));
 
         setView(view);
         size(screenWidth, screenHeight);
-    }*/
+    }
 
 }
