@@ -12,6 +12,11 @@ public class Ball extends GameObject implements ICollidableWithGameObjects, IKey
 	private int color;
 	private boolean isMoving = false;
 	
+	private static final int RECHTSBOVEN = 45;
+	private static final int RECHTSONDER = 135;
+	private static final int LINKSONDER = 225;
+	private static final int LINKSBOVEN = 315;
+	
 	public Ball(PApplet app, int color) {
 		this.app=app;
 		this.color=color;
@@ -22,15 +27,15 @@ public class Ball extends GameObject implements ICollidableWithGameObjects, IKey
 	public void gameObjectCollisionOccurred(List<GameObject> collidedGameObjects) {
 		for (GameObject g:collidedGameObjects) {
 			if(g instanceof Board){				
-				if(super.getDirection()==225){
-					super.setDirection(315);
+				if(super.getDirection()==LINKSONDER){
+					super.setDirection(LINKSBOVEN);
 				}
-				if(super.getDirection()==135){
-					super.setDirection(45);
+				if(super.getDirection()==RECHTSONDER){
+					super.setDirection(RECHTSBOVEN);
 				}
 			}
 			if(g instanceof Brick){
-				if(((Brick) g).getType()==0){
+				if(((Brick) g).getType()==Brick.EEN){
 					((Brick) g).minType();
 					g.setVisible(false);
 					System.out.println("geraakt");
@@ -53,30 +58,30 @@ public class Ball extends GameObject implements ICollidableWithGameObjects, IKey
 	public void update() {
 		//rechterwand
 		if(super.getX()>=app.getWidth()-super.getWidth()){
-			if(super.getDirection()==45){
-				super.setDirection(315);
+			if(super.getDirection()==RECHTSBOVEN){
+				super.setDirection(LINKSBOVEN);
 			}
-			if(super.getDirection()==135){
-				super.setDirection(225);
+			if(super.getDirection()==RECHTSONDER){
+				super.setDirection(LINKSONDER);
 			}
 		}
 		//bovenwand
 		if(super.getY()<=0+super.getHeight()){
-			if(super.getDirection()==315){
-				super.setDirection(225);
+			if(super.getDirection()==LINKSBOVEN){
+				super.setDirection(LINKSONDER);
 			}
-			if(super.getDirection()==45){
-				super.setDirection(135);
+			if(super.getDirection()==RECHTSBOVEN){
+				super.setDirection(RECHTSONDER);
 			}
 		}
 		
 		//linkerwand
 		if(super.getX()<=0+super.getWidth()){
-			if(super.getDirection()==315){
-				super.setDirection(45);
+			if(super.getDirection()==LINKSBOVEN){
+				super.setDirection(RECHTSBOVEN);
 			}
-			if(super.getDirection()==225){
-				super.setDirection(135);
+			if(super.getDirection()==LINKSONDER){
+				super.setDirection(RECHTSONDER);
 			}
 		}
 		
@@ -86,7 +91,7 @@ public class Ball extends GameObject implements ICollidableWithGameObjects, IKey
 	public void keyPressed(int keycode, char key){
 		if(keycode==32){
 			if(!isMoving){
-				super.setDirection(45   );
+				super.setDirection(RECHTSBOVEN);
 				super.setSpeed(5);
 				isMoving = true;
 			}
