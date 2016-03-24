@@ -3,23 +3,32 @@ package nl.han.ica.breakout;
 import nl.han.ica.OOPDProcessingEngineHAN.Objects.AnimatedSpriteObject;
 import nl.han.ica.OOPDProcessingEngineHAN.Objects.Sprite;
 import nl.han.ica.OOPDProcessingEngineHAN.UserInput.IMouseInput;
+import processing.core.PApplet;
 
-public class Board extends AnimatedSpriteObject{
+public class Board extends AnimatedSpriteObject implements IMouseInput{
+	
+	PApplet game;
 
-	public Board(Sprite sprite, int totalFrames) {
+	public Board(PApplet game, Sprite sprite, int totalFrames) {
 		super(sprite, totalFrames);
-		// TODO Auto-generated constructor stub
+		this.game=game;
 	}
 
 
 	@Override
 	public void update() {
-		// TODO Auto-generated method stub
+		if(super.getX()<=0){
+			super.setX(0);
+		}
+		if(super.getX()>=game.getWidth()-width){
+			super.setX(game.getWidth()-width);
+		}
 		
 	}
 	
-	public void mouseClicked(){
-		System.out.print("hallo");
+	@Override
+	public void mouseMoved(int x, int y){
+		super.setX(x-super.getWidth()/2);
 	}
-
+	
 }
