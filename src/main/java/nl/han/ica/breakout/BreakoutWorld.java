@@ -1,6 +1,7 @@
 package nl.han.ica.breakout;
 
 import nl.han.ica.OOPDProcessingEngineHAN.Engine.GameEngine;
+import nl.han.ica.OOPDProcessingEngineHAN.Objects.Sprite;
 import nl.han.ica.OOPDProcessingEngineHAN.Objects.TextObject;
 import nl.han.ica.OOPDProcessingEngineHAN.Sound.Sound;
 import nl.han.ica.OOPDProcessingEngineHAN.View.View;
@@ -23,7 +24,15 @@ public class BreakoutWorld extends GameEngine{
 	public void setupGame() {
 		int worldWidth=1200;
         int worldHeight=900;
+        int boardWidth=150;
+        int boardHeight=40;
+        
         createViewWithoutViewport(worldWidth, worldHeight);
+        
+        Sprite boardSprite = new Sprite("src/main/java/nl/han/ica/breakout/media/board.png");
+        boardSprite.resize(boardWidth, boardHeight);
+        Board board = new Board(boardSprite,1);
+        addGameObject(board,worldWidth/2-boardWidth/2,worldHeight/8*7);
 	}
 
 	@Override
