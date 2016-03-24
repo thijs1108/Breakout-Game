@@ -4,12 +4,10 @@ import processing.core.PApplet;
 import processing.core.PGraphics;
 
 public class Brick extends GameObject{
-	private PApplet app;
 	private int kleur;
 	
-	public Brick(PApplet app, float x, float y, float breedte, float hoogte, int kleur) {
+	public Brick(float x, float y, float breedte, float hoogte, int kleur) {
 		super(x,y,breedte,hoogte);
-		this.app=app;
 		this.kleur=kleur;
 	}
 
@@ -21,8 +19,8 @@ public class Brick extends GameObject{
 
 	@Override
 	public void draw(PGraphics g) {
-		// TODO Auto-generated method stub
-		
+		g.fill(kleur);
+		g.rect(super.getX(), super.getY(), super.getWidth(), super.getHeight());
 	}
 
 }

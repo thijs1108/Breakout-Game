@@ -1,5 +1,7 @@
 package nl.han.ica.breakout;
 
+import java.util.ArrayList;
+
 import nl.han.ica.OOPDProcessingEngineHAN.Engine.GameEngine;
 import nl.han.ica.OOPDProcessingEngineHAN.Objects.Sprite;
 import nl.han.ica.OOPDProcessingEngineHAN.Objects.TextObject;
@@ -17,6 +19,7 @@ public class BreakoutWorld extends GameEngine{
 	private Board board;
 	private Ball ball;
 	private BrickMap brickmap;
+	private ArrayList<Brick> bricks;
 
 	public static void main(String[] args) {
 		PApplet.main(new String[]{"nl.han.ica.breakout.BreakoutWorld"});
@@ -39,8 +42,11 @@ public class BreakoutWorld extends GameEngine{
         ball.setWidth(25);
         ball.setHeight(25);
         addGameObject(ball,worldWidth/2,worldHeight/8*7-50);
-        brickmap=new BrickMap(this, 1);
-        
+        brickmap=new BrickMap(1);
+        bricks=brickmap.getBricks();
+        for(Brick b: bricks){
+        	addGameObject(b);
+        }
       
 	}
 

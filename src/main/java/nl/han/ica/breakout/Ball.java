@@ -22,8 +22,8 @@ public class Ball extends GameObject implements ICollidableWithGameObjects, IKey
 	public void gameObjectCollisionOccurred(List<GameObject> collidedGameObjects) {
 		for (GameObject g:collidedGameObjects) {
 			if(g instanceof Board){
-				System.out.println(super.getY()+super.getHeight());
-				System.out.println(g.getY());
+				System.out.println(g.getHeight());
+				System.out.println(g.getWidth());
 				
 				if(super.getDirection()==225){
 					super.setDirection(315);
