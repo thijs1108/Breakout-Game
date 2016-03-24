@@ -14,7 +14,11 @@ public class BrickMap{
 	public ArrayList<Brick> getBricks(){
 		if(level==1) {
 			bricks = new ArrayList<>();
-			bricks.add(new Brick(0, 200, 200, 500, 500));
+			for(int i=0; i<7; i++) {
+				for(int j=0; j<4; j++) {
+				bricks.add(new Brick(0, i*125, j*40, 125, 40));
+				}
+			}
 		}
 		return bricks;
 	}
