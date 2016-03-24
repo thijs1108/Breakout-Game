@@ -16,6 +16,7 @@ public class BreakoutWorld extends GameEngine{
 	private int bricksPopped;
 	private Board board;
 	private Ball ball;
+	private BrickMap brickmap;
 
 	public static void main(String[] args) {
 		PApplet.main(new String[]{"nl.han.ica.breakout.BreakoutWorld"});
@@ -38,6 +39,9 @@ public class BreakoutWorld extends GameEngine{
         ball.setWidth(25);
         ball.setHeight(25);
         addGameObject(ball,worldWidth/2,worldHeight/8*7-50);
+        brickmap=new BrickMap(this, 1);
+        
+      
 	}
 
 	@Override
