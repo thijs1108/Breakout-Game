@@ -1,22 +1,18 @@
 package nl.han.ica.breakout;
 import nl.han.ica.OOPDProcessingEngineHAN.Objects.GameObject;
+import processing.core.PApplet;
 import processing.core.PGraphics;
-
 import java.util.List;
-
 import nl.han.ica.OOPDProcessingEngineHAN.Collision.ICollidableWithGameObjects;
 
 public class Ball extends GameObject implements ICollidableWithGameObjects{
-	private int kleur;
-	private int balGrootte;
+	private PApplet app;
 	
-	public Ball(int kleur, int balGrootte) {
-		this.kleur=kleur;
-		this.balGrootte=balGrootte;
+	public Ball(PApplet app) {
+		this.app=app;	
 	}
 	
 	public void draw() {
-		
 	}
 	
 	public void update() {
