@@ -20,7 +20,19 @@ public class Ball extends GameObject implements ICollidableWithGameObjects, IKey
 
 	@Override
 	public void gameObjectCollisionOccurred(List<GameObject> collidedGameObjects) {
-		// TODO Auto-generated method stub
+		for (GameObject g:collidedGameObjects) {
+			if(g instanceof Board){
+				System.out.println(super.getY()+super.getHeight());
+				System.out.println(g.getY());
+				
+				if(super.getDirection()==225){
+					super.setDirection(315);
+				}
+				if(super.getDirection()==135){
+					super.setDirection(45);
+				}
+			}
+		}
 		
 	}
 
@@ -35,7 +47,32 @@ public class Ball extends GameObject implements ICollidableWithGameObjects, IKey
 
 	@Override
 	public void update() {
-		// TODO Auto-generated method stub
+		//rechterwand
+		if(super.getX()>=app.getWidth()-super.getWidth()){
+			if(super.getDirection()==45){
+				super.setDirection(315);
+			}
+			if(super.getDirection()==135){
+				super.setDirection(225);
+			}
+		}
+		//bovenwand
+		if(super.getY()<=0+super.getHeight()){
+			if(super.getDirection()==315){
+				super.setDirection(225);
+			}
+			if(super.getDirection()==45){
+				super.setDirection(135);
+			}
+		}
+		if(super.getX()<=0+super.getWidth()){
+			if(super.getDirection()==315){
+				super.setDirection(45);
+			}
+			if(super.getDirection()==225){
+				super.setDirection(135);
+			}
+		}
 		
 	}
 	
@@ -43,7 +80,7 @@ public class Ball extends GameObject implements ICollidableWithGameObjects, IKey
 	public void keyPressed(int keycode, char key){
 		if(keycode==32){
 			if(!isMoving){
-				super.setDirection(45);
+				super.setDirection(225);
 				super.setSpeed(5);
 				isMoving = true;
 			}

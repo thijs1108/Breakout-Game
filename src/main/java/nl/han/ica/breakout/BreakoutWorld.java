@@ -26,7 +26,7 @@ public class BreakoutWorld extends GameEngine{
 		int worldWidth=1200;
         int worldHeight=900;
         int boardWidth=150;
-        int boardHeight=40;
+        int boardHeight=20;
         
         createViewWithoutViewport(worldWidth, worldHeight);
         
@@ -37,7 +37,7 @@ public class BreakoutWorld extends GameEngine{
         ball = new Ball(this,0xFFFFFFFF);
         ball.setWidth(25);
         ball.setHeight(25);
-        addGameObject(ball,worldWidth/2,worldHeight-50 );
+        addGameObject(ball,worldWidth/2,worldHeight/8*7-50);
 	}
 
 	@Override
