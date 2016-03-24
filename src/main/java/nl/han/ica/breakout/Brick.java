@@ -5,6 +5,9 @@ import processing.core.PGraphics;
 
 public class Brick extends GameObject{
 	private int type;
+	public static final int VERDWENEN = -1;
+	public static final int EEN = 0;
+	
 	
 	public Brick(int type,float x, float y, float breedte, float hoogte) {
 		super(x,y,breedte,hoogte);
