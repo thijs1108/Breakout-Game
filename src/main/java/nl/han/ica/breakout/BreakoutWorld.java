@@ -32,7 +32,7 @@ public class BreakoutWorld extends GameEngine{
         
         Sprite boardSprite = new Sprite("src/main/java/nl/han/ica/breakout/media/board.png");
         boardSprite.resize(boardWidth, boardHeight);
-        Board board = new Board(boardSprite,1);
+        board = new Board(this,boardSprite,1);
         addGameObject(board,worldWidth/2-boardWidth/2,worldHeight/8*7);
 	}
 
