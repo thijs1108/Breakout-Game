@@ -34,7 +34,9 @@ public class BreakoutWorld extends GameEngine{
         boardSprite.resize(boardWidth, boardHeight);
         board = new Board(this,boardSprite,1);
         addGameObject(board,worldWidth/2-boardWidth/2,worldHeight/8*7);
-        ball = new Ball(this);
+        ball = new Ball(this,0xFFFFFFFF);
+        ball.setWidth(25);
+        ball.setHeight(25);
         addGameObject(ball,worldWidth/2,worldHeight-50 );
 	}
 
