@@ -47,7 +47,6 @@ public class BreakoutWorld extends GameEngine{
         for(Brick b: bricks){
         	addGameObject(b);
         }
-      
 	}
 
 	@Override
