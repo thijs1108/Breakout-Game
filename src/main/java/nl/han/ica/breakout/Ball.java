@@ -40,6 +40,9 @@ public class Ball extends GameObject implements ICollidableWithGameObjects, IKey
 					g.setVisible(false);
 					super.setDirection(calculateNewDirection(this,g));
 				}
+				if(((Brick) g).getItem()==Brick.FASTERBALL){
+					Item.addItem(new Item(Brick.FASTERBALL, this.getX()+this.getWidth()/2, this.getY(), 10, 10));
+				}
 			}
 		}
 		
@@ -48,34 +51,19 @@ public class Ball extends GameObject implements ICollidableWithGameObjects, IKey
 	private int calculateNewDirection(Ball ball, GameObject g) {
 		
 		if(ball.getDirection()==RECHTSBOVEN){
-			//onderkant
-			if(ball.getX()>=g.getX() && ball.getY()<=g.getY()+g.getHeight()){
-				return RECHTSONDER;
-			}
-			//linkerkant
-			else{
-				return LINKSBOVEN;
-			}
+			if(ball.getX()>=g.getX() && ball.getY()<=g.getY()+g.getHeight())return RECHTSONDER;
+			else return LINKSBOVEN;
 		}
-		
 		if(ball.getDirection()==LINKSBOVEN)
-			if(ball.getX()<=g.getX()+g.getWidth()){
-				return LINKSONDER;
-			}
-			else{
-				return RECHTSBOVEN;
-			}
+			if(ball.getX()>=g.getX() && ball.getY()>=g.getY()+g.getHeight()) return RECHTSONDER;
+			else return LINKSONDER;
 		
 		if(ball.getDirection()==RECHTSONDER)
-			if(ball.getX()<=g.getX()){
-				return LINKSONDER;
-			}
-			else{
-				return RECHTSBOVEN;
-			}
+			if(ball.getX()<=g.getX() && ball.getY()<=g.getY()+g.getHeight()) return LINKSONDER;
+			else return RECHTSBOVEN;
 		
 		if(ball.getDirection()==LINKSONDER)
-			if(ball.getY()+ball.getWidth()>g.getY()) return RECHTSONDER;
+			if(ball.getX()>=g.getX()+g.getWidth()+1) return RECHTSONDER;
 			else return LINKSBOVEN;
 		return 180;
 	}
@@ -127,9 +115,11 @@ public class Ball extends GameObject implements ICollidableWithGameObjects, IKey
 	public void keyPressed(int keycode, char key){
 		if(keycode==32){
 			if(!isMoving){
-				super.setDirection(RECHTSBOVEN);
 				super.setSpeed(7);
 				isMoving = true;
+				if(super.getDirection()==90.0){
+					super.setDirection(RECHTSBOVEN);
+				}
 			}
 			else{
 				super.setSpeed(0);

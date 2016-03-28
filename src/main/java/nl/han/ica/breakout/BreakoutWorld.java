@@ -20,6 +20,7 @@ public class BreakoutWorld extends GameEngine{
 	private Ball ball;
 	private BrickMap brickmap;
 	private ArrayList<Brick> bricks;
+	private ArrayList<Item> items;
 
 	public static void main(String[] args) {
 		PApplet.main(new String[]{"nl.han.ica.breakout.BreakoutWorld"});
@@ -62,5 +63,6 @@ public class BreakoutWorld extends GameEngine{
         setView(view);
         size(screenWidth, screenHeight);
     }
+	
 
 }
