@@ -6,7 +6,7 @@
 * Enkele van de Bricks bevatten powerups, deze powerups komen "vrij" als de Brick weggeschoten is. Als de speler deze opvangt gebeurt er
 * een "special event", bijvoorbeeld de speler krijgt er een leven bij. 
 * 
-* Op de achtergrond van het spel komt een raket of ufo in beeld.
+* Op de achtergrond van het spel komt een raket of ufo in beeld. 
 * 
 * @author  Wiedo Harkema & Thijs Beltman
 * @version 1.0
