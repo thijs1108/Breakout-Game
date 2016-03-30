@@ -1,3 +1,19 @@
+/**
+* Breakout world
+* De speler bestuurt een board (die weerkaatst een ball). 
+* Met deze ball moet de speler Bricks (die zich boven de speler bevinden) wegschieten. 
+* Als de speler alle objecten heeft weggeschoten is het level uitgespeeld. De speler heeft aan het begin van het spel 3 levens, als het aantal levens 0 is, is de speler gameover.
+* Enkele van de Bricks bevatten powerups, deze powerups komen "vrij" als de Brick weggeschoten is. Als de speler deze opvangt gebeurt er
+* een "special event", bijvoorbeeld de speler krijgt er een leven bij. 
+* 
+* Op de achtergrond van het spel komt een raket of ufo in beeld.
+* 
+* @author  Wiedo Harkema & Thijs Beltman
+* @version 1.0
+* @since   30-03-2016 
+*/
+
+
 package nl.han.ica.breakout;
 
 import java.util.ArrayList;
