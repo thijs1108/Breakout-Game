@@ -11,13 +11,15 @@ public class Ball extends GameObject implements ICollidableWithGameObjects, IKey
 	private PApplet app;
 	private int color;
 	private boolean isMoving = false;
+	private BreakoutWorld world;
 	
 	private static final int RECHTSBOVEN = 45;
 	private static final int RECHTSONDER = 135;
 	private static final int LINKSONDER = 225;
 	private static final int LINKSBOVEN = 315;
 	
-	public Ball(PApplet app, int color) {
+	public Ball(BreakoutWorld world,PApplet app, int color) {
+		this.world=world;
 		this.app=app;
 		this.color=color;
 	}
@@ -39,6 +41,7 @@ public class Ball extends GameObject implements ICollidableWithGameObjects, IKey
 					((Brick) g).minType();
 					g.setVisible(false);
 					super.setDirection(calculateNewDirection(this,g));
+					world.increaseBricksPopped();
 				}
 				if(((Brick) g).getItem()==Brick.FASTERBALL){
 					Item.addItem(new Item(Brick.FASTERBALL, this.getX()+this.getWidth()/2, this.getY(), 10, 10));
