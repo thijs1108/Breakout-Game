@@ -119,7 +119,7 @@ public class BreakoutWorld extends GameEngine{
 		addGameObject(powerup);
 	}
 	public void createAchtergrondObjectSpawner() {
-		achtergrondObjectSpawner = new AchtergrondObjectSpawner(this,2);
+		achtergrondObjectSpawner = new AchtergrondObjectSpawner(this,0.3);
 	}
 
 

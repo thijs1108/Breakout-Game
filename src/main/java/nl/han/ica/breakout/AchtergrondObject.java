@@ -9,6 +9,8 @@ public abstract class AchtergrondObject extends AnimatedSpriteObject {
 	public AchtergrondObject(Sprite sprite, int width, int heigth) {
 		super(sprite, 1);
 		sprite.resize(width, heigth);
+
 	}
 
+	public abstract void setSpeed();
 }

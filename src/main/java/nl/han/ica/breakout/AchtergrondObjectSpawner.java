@@ -9,11 +9,11 @@ import nl.han.ica.waterworld.Bubble;
 import nl.han.ica.waterworld.WaterWorld;
 
 public class AchtergrondObjectSpawner implements IAlarmListener {
-	private float achtergrondObjectPerSecond;
+	private double achtergrondObjectPerSecond;
     private Random random;
     private BreakoutWorld world;
     
-    public AchtergrondObjectSpawner(BreakoutWorld world,float achtergrondObjectPerSecond) {
+    public AchtergrondObjectSpawner(BreakoutWorld world,double achtergrondObjectPerSecond) {
         this.achtergrondObjectPerSecond=achtergrondObjectPerSecond;
         this.world=world;
         random=new Random();
@@ -28,7 +28,15 @@ public class AchtergrondObjectSpawner implements IAlarmListener {
 
     @Override
     public void triggerAlarm(String alarmName) {
-        AchtergrondObject a = new Rocket(world);
+    	AchtergrondObject a;
+    	if(random.nextInt(3)==1){
+    		a = new Rocket(world);
+    		a.setSpeed();
+    	}
+    	else{
+    		a = new Ufo(world);
+    		a.setSpeed();
+    	}
         world.addGameObject(a, random.nextInt(world.getWidth()), world.getHeight());
         startAlarm();
     }
