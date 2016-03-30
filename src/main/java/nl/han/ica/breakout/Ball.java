@@ -68,7 +68,7 @@ public class Ball extends GameObject implements ICollidableWithGameObjects, IKey
 		if(ball.getDirection()==LINKSONDER)
 			if(ball.getX()>=g.getX()+g.getWidth()+1) return RECHTSONDER;
 			else return LINKSBOVEN;
-		return 180;
+		return RECHTSBOVEN;
 	}
 
 
@@ -115,8 +115,9 @@ public class Ball extends GameObject implements ICollidableWithGameObjects, IKey
 			world.decreaseLevens();
 			super.setSpeed(0);
 			isMoving=false;
-			super.setX(world.displayWidth/2);
-			super.setY(world.displayHeight/8*6-50);
+			super.setX(world.getWidth()/2);
+			super.setY(world.getHeight()/8*6-50);
+			
 		}
 		
 	}
@@ -124,12 +125,10 @@ public class Ball extends GameObject implements ICollidableWithGameObjects, IKey
 	@Override
 	public void keyPressed(int keycode, char key){
 		if(keycode==32){
-			if(!isMoving){
+			if(!isMoving && world.dead==false){
 				super.setSpeed(7);
 				isMoving = true;
-				if(super.getDirection()==90.0){
-					super.setDirection(RECHTSBOVEN);
-				}
+				super.setDirection(RECHTSBOVEN);
 			}
 			else{
 				super.setSpeed(0);

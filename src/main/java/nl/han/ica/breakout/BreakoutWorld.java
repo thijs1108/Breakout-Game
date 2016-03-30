@@ -23,6 +23,7 @@ public class BreakoutWorld extends GameEngine{
 	private ArrayList<Brick> bricks;
 	private int levens = 3;
 	private Dashboard dashboard;
+	public boolean dead = false;
 
 	public static void main(String[] args) {
 		PApplet.main(new String[]{"nl.han.ica.breakout.BreakoutWorld"});
@@ -81,7 +82,14 @@ public class BreakoutWorld extends GameEngine{
 	}
 	public void decreaseLevens(){
 		levens--;
-		refreshDasboardText();
+		if(levens==0){
+			dashboardText.setText("Game over");
+			ball.setSpeed(0);
+			dead=true;
+		}
+		else{
+			refreshDasboardText();
+		}
 	}
 	
 	 private void refreshDasboardText() {
