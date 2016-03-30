@@ -31,12 +31,11 @@ public class AchtergrondObjectSpawner implements IAlarmListener {
     	AchtergrondObject a;
     	if(random.nextInt(3)==1){
     		a = new Rocket(world);
-    		a.setSpeed();
     	}
     	else{
     		a = new Ufo(world);
-    		a.setSpeed();
     	}
+    	a.setSpeed();
         world.addGameObject(a, random.nextInt(world.getWidth()), world.getHeight());
         startAlarm();
     }
