@@ -41,16 +41,21 @@ public class BreakoutWorld extends GameEngine{
         boardSprite.resize(boardWidth, boardHeight);
         board = new Board(this,boardSprite,1);
         addGameObject(board,worldWidth/2-boardWidth/2,worldHeight/8*7);
+        
         ball = new Ball(this,0xFFFFFFFF);
         ball.setWidth(25);
         ball.setHeight(25);
         addGameObject(ball,worldWidth/2,worldHeight/8*6-50);
-        brickmap=new BrickMap(1);
-        bricks=brickmap.getBricks();
+        
         dashboard = new DashBoard(3);
+        dashboard.setX(0);
+        dashboard.setY(worldHeight/9);
         dashboard.setWidth(worldWidth);
         dashboard.setHeight(worldHeight/9);
         addDashboard(dashboard);
+        
+        brickmap=new BrickMap(1);
+        bricks=brickmap.getBricks();
         for(Brick b: bricks){
         	addGameObject(b);
         }
