@@ -8,6 +8,7 @@ import nl.han.ica.OOPDProcessingEngineHAN.Objects.Sprite;
 import nl.han.ica.OOPDProcessingEngineHAN.Objects.TextObject;
 import nl.han.ica.OOPDProcessingEngineHAN.Sound.Sound;
 import nl.han.ica.OOPDProcessingEngineHAN.View.View;
+import nl.han.ica.waterworld.BubbleSpawner;
 import processing.core.PApplet;
 
 @SuppressWarnings("serial")
@@ -16,6 +17,7 @@ public class BreakoutWorld extends GameEngine{
 	private Sound sound;
 	private Sound popsound;
 	private LifeTextObject dashboardText;
+	private AchtergrondObjectSpawner achtergrondObjectSpawner;
 	private int bricksPopped = 0;
 	private Board board;
 	private Ball ball;
@@ -38,6 +40,7 @@ public class BreakoutWorld extends GameEngine{
         
         createViewWithoutViewport(worldWidth, worldHeight);
         createDashBoard(900,100);
+        createAchtergrondObjectSpawner();
         refreshDasboardText();
         Sprite boardSprite = new Sprite("src/main/java/nl/han/ica/breakout/media/board.png");
         boardSprite.resize(boardWidth, boardHeight);
@@ -92,12 +95,15 @@ public class BreakoutWorld extends GameEngine{
 		}
 	}
 	
-	 private void refreshDasboardText() {
-	        dashboardText.setText("Bricks popped: "+bricksPopped+" Levens: "+levens);
+	private void refreshDasboardText() {
+		dashboardText.setText("Bricks popped: "+bricksPopped+" Levens: "+levens);
 	}
 	 
-	 public void addPowerup(PowerUp powerup){
-			addGameObject(powerup);
+	public void addPowerup(PowerUp powerup){
+		addGameObject(powerup);
+	}
+	public void createAchtergrondObjectSpawner() {
+		achtergrondObjectSpawner = new AchtergrondObjectSpawner(this,2);
 	}
 
 

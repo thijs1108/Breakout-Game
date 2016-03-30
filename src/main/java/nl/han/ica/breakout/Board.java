@@ -7,7 +7,7 @@ import processing.core.PApplet;
 
 public class Board extends AnimatedSpriteObject implements IMouseInput{
 	
-	PApplet game;
+	private PApplet game;
 
 	public Board(PApplet game, Sprite sprite, int totalFrames) {
 		super(sprite, totalFrames);

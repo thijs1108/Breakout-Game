@@ -77,6 +77,7 @@ public class Ball extends GameObject implements ICollidableWithGameObjects, IKey
 		g.fill(color);
 		g.noStroke();
 		g.smooth();
+		g.ellipseMode(g.CORNER);
 		g.ellipse(super.getX(), super.getY(), super.getWidth(), super.getHeight());
 		
 	}
