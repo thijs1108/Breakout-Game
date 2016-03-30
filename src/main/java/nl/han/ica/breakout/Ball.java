@@ -42,9 +42,9 @@ public class Ball extends GameObject implements ICollidableWithGameObjects, IKey
 					g.setVisible(false);
 					super.setDirection(calculateNewDirection(this,g));
 					world.increaseBricksPopped();
-				}
-				if(((Brick) g).getItem()==Brick.FASTERBALL){
-					Item.addItem(new Item(Brick.FASTERBALL, this.getX()+this.getWidth()/2, this.getY(), 10, 10));
+					if(((Brick) g).getItem()==Brick.FASTERBALL){
+						world.addPowerup(new PowerUp(Brick.FASTERBALL, this.getX()+this.getWidth()/2, this.getY(), 10, 10));
+					}
 				}
 			}
 		}
@@ -110,6 +110,13 @@ public class Ball extends GameObject implements ICollidableWithGameObjects, IKey
 			if(super.getDirection()==LINKSONDER){
 				super.setDirection(RECHTSONDER);
 			}
+		}
+		if(super.getY()>=world.displayHeight){
+			world.decreaseLevens();
+			super.setSpeed(0);
+			isMoving=false;
+			super.setX(world.displayWidth/2);
+			super.setY(world.displayHeight/8*6-50);
 		}
 		
 	}

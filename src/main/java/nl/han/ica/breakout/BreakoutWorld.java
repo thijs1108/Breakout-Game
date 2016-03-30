@@ -21,7 +21,7 @@ public class BreakoutWorld extends GameEngine{
 	private Ball ball;
 	private BrickMap brickmap;
 	private ArrayList<Brick> bricks;
-	private ArrayList<Item> items;
+	private int levens = 3;
 	private Dashboard dashboard;
 
 	public static void main(String[] args) {
@@ -36,7 +36,8 @@ public class BreakoutWorld extends GameEngine{
         int boardHeight=20;
         
         createViewWithoutViewport(worldWidth, worldHeight);
-        createDashBoard(500,100);
+        createDashBoard(900,100);
+        refreshDasboardText();
         Sprite boardSprite = new Sprite("src/main/java/nl/han/ica/breakout/media/board.png");
         boardSprite.resize(boardWidth, boardHeight);
         board = new Board(this,boardSprite,1);
@@ -78,9 +79,17 @@ public class BreakoutWorld extends GameEngine{
 		bricksPopped++;
 		refreshDasboardText();
 	}
+	public void decreaseLevens(){
+		levens--;
+		refreshDasboardText();
+	}
 	
 	 private void refreshDasboardText() {
-	        dashboardText.setText("Bricks popped: "+bricksPopped);
+	        dashboardText.setText("Bricks popped: "+bricksPopped+" Levens: "+levens);
+	}
+	 
+	 public void addPowerup(PowerUp powerup){
+			addGameObject(powerup);
 	}
 
 
