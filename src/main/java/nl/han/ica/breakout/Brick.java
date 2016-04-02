@@ -1,10 +1,14 @@
 package nl.han.ica.breakout;
+import java.util.Random;
+
 import nl.han.ica.OOPDProcessingEngineHAN.Objects.GameObject;
 import processing.core.PGraphics;
 
 public class Brick extends GameObject{
 	private int type;
 	private int item;
+	private int brickKleurNr;  
+	private int brickKleur;
 
 	public static final int VERDWENEN = -1;
 	public static final int EEN = 0;
@@ -17,6 +21,17 @@ public class Brick extends GameObject{
 		super(x,y,breedte,hoogte);
 		this.type = type;
 		this.item = item;
+		Random random = new Random();
+		brickKleurNr=random.nextInt(3);
+		if(brickKleurNr==0) {
+			brickKleur= 25;
+		}
+		else if(brickKleurNr==1) {
+			brickKleur= 150;
+		}
+		else if(brickKleurNr==2) {
+			brickKleur= 75;
+		}
 	}
 
 	@Override
@@ -26,7 +41,7 @@ public class Brick extends GameObject{
 
 	@Override
 	public void draw(PGraphics g) {
-		g.fill(0xFFFFFFFF);
+		g.fill(brickKleur);
 		g.stroke(2);
 		g.rect(super.getX(), super.getY(), super.getWidth(), super.getHeight());
 	}
