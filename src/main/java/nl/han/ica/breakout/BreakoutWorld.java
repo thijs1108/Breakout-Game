@@ -114,7 +114,7 @@ public class BreakoutWorld extends GameEngine{
 	}
 	
 	private void refreshDasboardText() {
-		dashboardText.setText("Bricks popped: "+bricksPopped+" Levens: "+levens);
+		dashboardText.setText("Bricks popped: "+bricksPopped+ "          " + " Levens: "+levens);
 	}
 	 
 	public void addPowerup(PowerUp powerup){

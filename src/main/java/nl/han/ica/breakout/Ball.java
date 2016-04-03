@@ -39,7 +39,7 @@ public class Ball extends GameObject implements ICollidableWithGameObjects, IKey
 			if(g instanceof Brick){
 				if(((Brick) g).getType()==Brick.EEN){
 					((Brick) g).minType();
-					g.setVisible(false);
+					world.deleteGameObject(g);
 					super.setDirection(calculateNewDirection(this,g));
 					world.increaseBricksPopped();
 					if(((Brick) g).getItem()==Brick.FASTERBALL){
