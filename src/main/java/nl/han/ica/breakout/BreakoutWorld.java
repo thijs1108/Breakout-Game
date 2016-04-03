@@ -30,7 +30,7 @@ import processing.core.PApplet;
 @SuppressWarnings("serial")
 public class BreakoutWorld extends GameEngine{
 	
-	private Sound sound;
+	private Sound backgroundSound;
 	private Sound popsound;
 	private LifeTextObject dashboardText;
 	private AchtergrondObjectSpawner achtergrondObjectSpawner;
@@ -72,6 +72,8 @@ public class BreakoutWorld extends GameEngine{
         for(Brick b: bricks){
         	addGameObject(b);
         }
+        
+        initializeSound();
 	}
 
 	@Override
@@ -121,6 +123,12 @@ public class BreakoutWorld extends GameEngine{
 	public void createAchtergrondObjectSpawner() {
 		achtergrondObjectSpawner = new AchtergrondObjectSpawner(this,0.3);
 	}
+	
+	 private void initializeSound() {
+	        backgroundSound = new Sound(this, "src/main/java/nl/han/ica/breakout/media/Waterworld.mp3");
+	        backgroundSound.loop(-1);
+	        //bubblePopSound = new Sound(this, "src/main/java/nl/han/ica/waterworld/media/pop.mp3");
+	    }
 
 
 }
