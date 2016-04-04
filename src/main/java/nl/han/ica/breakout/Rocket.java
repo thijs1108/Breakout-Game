@@ -1,3 +1,9 @@
+/**
+* Rocket
+* De rocket is een gameObject. Deze beweegt op de achtergrond van het spel. Deze heeft geen collusion met andere gameObjecten. Deze rocket 
+* beweegt van onderaan het scherm naar boven. Deze y speed wordt in deze klasse geregeld. 
+*/
+
 package nl.han.ica.breakout;
 
 import nl.han.ica.OOPDProcessingEngineHAN.Objects.Sprite;

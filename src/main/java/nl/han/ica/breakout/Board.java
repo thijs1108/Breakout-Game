@@ -1,3 +1,8 @@
+/**
+* Board
+* In deze klasse wordt de beweging van het Board geregeld. Daarnaast wordt er voor gezorgd dat het Board het scherm niet kan verlaten.
+*/
+
 package nl.han.ica.breakout;
 
 import nl.han.ica.OOPDProcessingEngineHAN.Objects.AnimatedSpriteObject;

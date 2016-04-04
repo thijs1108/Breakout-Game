@@ -1,3 +1,8 @@
+/**
+* AchtergrondObject
+* Deze abstracte klasse dient als superklasse voor de klasses Ufo en Rocket.
+*/
+
 package nl.han.ica.breakout;
 
 import nl.han.ica.OOPDProcessingEngineHAN.Objects.AnimatedSpriteObject;

@@ -1,3 +1,8 @@
+/**
+* LifeTextObject
+* In deze klasse wordt de dashboardtext getekend.
+*/
+
 package nl.han.ica.breakout;
 
 import nl.han.ica.OOPDProcessingEngineHAN.Objects.GameObject;

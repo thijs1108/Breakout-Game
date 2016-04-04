@@ -1,3 +1,8 @@
+/**
+* Brick
+* In deze klasse worden de Bricks getekend. Deze krijgen een random kleur mee. 
+*/
+
 package nl.han.ica.breakout;
 import java.util.Random;
 

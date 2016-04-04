@@ -1,3 +1,11 @@
+/**
+* Ball
+* In deze klasse wordt de ball getekend. Ook wordt de ball richting bepaald op het moment dat die een brick, board of wand raakt. 
+* Als de speler op de spatiebalk drukt begint het spel, en begint de ball met bewegen. Als de speler nog een keer op de spatiebalk drukt 
+* pauzeert het spel. 
+* Ook wordt de ball instanceof Board en ball instanceof Brick gedetecteerd.
+*/
+
 package nl.han.ica.breakout;
 import nl.han.ica.OOPDProcessingEngineHAN.Objects.GameObject;
 import nl.han.ica.OOPDProcessingEngineHAN.UserInput.IKeyInput;

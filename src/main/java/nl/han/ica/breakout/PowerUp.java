@@ -1,3 +1,8 @@
+/**
+* Powerup
+* In deze klasse wordt de powerup getekend. Deze kan vrij komen op het moment dat de Ball een Brick raakt.
+*/
+
 package nl.han.ica.breakout;
 
 import java.util.ArrayList;
