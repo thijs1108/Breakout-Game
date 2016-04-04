@@ -50,7 +50,14 @@ public class Ball extends GameObject implements ICollidableWithGameObjects, IKey
 		}
 		
 	}
-
+	
+	/**
+	 * berektent de nieuwe richting van een ball
+	 * 
+	 * @param ball, de ball waarvan de nieuwe richting moet worden berekent
+	 * @param g, gameObject waarmee de ball in aanraking is gekomen
+	 * @return int, nieuwe richting
+	 */
 	private int calculateNewDirection(Ball ball, GameObject g) {
 		
 		if(ball.getDirection()==RECHTSBOVEN){
