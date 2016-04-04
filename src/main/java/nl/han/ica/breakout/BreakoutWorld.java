@@ -78,8 +78,16 @@ public class BreakoutWorld extends GameEngine{
 
 	@Override
 	public void update() {
-		// TODO Auto-generated method stub
-		
+		int aantal = 0;
+		for(Brick b : bricks){
+			if(b.getType()==Brick.VERDWENEN){
+				aantal++;
+			}
+		}
+		if(aantal==bricks.size()){
+			dashboardText.setText("Gewonnen!!");
+			ball.setSpeed(0);
+		}
 	}
 	
 	private void createViewWithoutViewport(int screenWidth, int screenHeight) {
